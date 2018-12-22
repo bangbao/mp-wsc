@@ -1,0 +1,27 @@
+<template name="74646636">
+  <view class="_view data-v-315d300d content">
+    <view class="_view data-v-315d300d input-group">
+      <view class="_view data-v-315d300d input-row border">
+        <text class="_text data-v-315d300d title">账号：</text>
+        <input type="text" value="{{account}}" bindinput="handleProxy" placeholder="请输入账号" data-eventid="{{'dYG-0'}}" data-comkey="{{$k}}" class="_input data-v-315d300d" />
+      </view>
+      <view class="_view data-v-315d300d input-row">
+        <text class="_text data-v-315d300d title">密码：</text>
+        <input type="text" password="true" value="{{password}}" bindinput="handleProxy" placeholder="请输入密码" data-eventid="{{'G7z-1'}}" data-comkey="{{$k}}" class="_input data-v-315d300d" />
+      </view>
+    </view>
+    <view class="_view data-v-315d300d btn-row" bindtap="handleProxy" data-eventid="{{'i1T-2'}}" data-comkey="{{$k}}">
+      <button class="_button data-v-315d300d primary" type="primary">登录</button>
+    </view>
+    <view class="_view data-v-315d300d action-row">
+      <navigator url="../user/reg" class="_navigator data-v-315d300d">注册账号</navigator>
+      <text class="_text data-v-315d300d">|</text>
+      <navigator url="../user/pwd" class="_navigator data-v-315d300d">忘记密码</navigator>
+    </view>
+    <view class="_view data-v-315d300d oauth-row" wx:if="{{hasProvider}}" style=" {{('top:' + (positionTop + 'upx') + ';')}}">
+      <view class="_view data-v-315d300d oauth-image" wx:key="provider.value" key="{{provider.value}}" wx:for="{{providerList}}" wx:for-index="index" wx:for-item="provider">
+        <image src="{{provider.image}}" bindtap="handleProxy" data-eventid="{{'0pU-3-'+index}}" data-comkey="{{$k}}" class="_image data-v-315d300d"></image>
+      </view>
+    </view>
+  </view>
+</template>

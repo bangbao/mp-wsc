@@ -1,0 +1,34 @@
+<template name="12833cff">
+  <view class="_view data-v-79325652 page">
+    <view class="_view data-v-79325652 uni-card">
+      <view class="_view data-v-79325652 uni-list">
+        <navigator class="_navigator data-v-79325652 uni-list-cell" hover-class="uni-list-cell-hover" url="/pages/user/edit">
+          <view class="_view data-v-79325652 uni-list-cell-navigate uni-navigate-right uni-media-list ">
+            <view class="_view data-v-79325652 uni-media-list-logo">
+              <image src="{{userInfo.avatar}}" wx:if="{{userInfo.avatar}}" class="_image data-v-79325652"></image>
+            </view>
+            <view class="_view data-v-79325652 uni-media-list-body">
+              <view class="_view data-v-79325652 uni-media-list-text-top">昵称: {{userInfo.nickname}}</view>
+              <view class="_view data-v-79325652 uni-media-list-text-bottom uni-ellipsis">性别: {{userInfo.sex_name}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view class="_view data-v-79325652 uni-list">
+        <navigator class="_navigator data-v-79325652 uni-list-cell" hover-class="uni-list-cell-hover" url="../task/add">
+          <view class="_view data-v-79325652 uni-list-cell-navigate uni-navigate-right">添加任务</view>
+        </navigator>
+        <navigator class="_navigator data-v-79325652 uni-list-cell" hover-class="uni-list-cell-hover" url="../main/feedback">
+          <view class="_view data-v-79325652 uni-list-cell-navigate uni-navigate-right">反馈</view>
+        </navigator>
+        <navigator class="_navigator data-v-79325652 uni-list-cell uni-list-cell-last" hover-class="uni-list-cell-hover" url="../main/about">
+          <view class="_view data-v-79325652 uni-list-cell-navigate uni-navigate-right">关于</view>
+        </navigator>
+      </view>
+    </view>
+    <view class="_view data-v-79325652 btn-row">
+      <button wx:if="{{!hasLogin}}" type="primary" class="_button data-v-79325652 btn-commit" bindtap="handleProxy" data-eventid="{{'9x0-0'}}" data-comkey="{{$k}}">登录</button>
+      <button wx:if="{{hasLogin}}" type="default" class="_button data-v-79325652 btn-commit" bindtap="handleProxy" data-eventid="{{'BUr-1'}}" data-comkey="{{$k}}">退出登录</button>
+    </view>
+  </view>
+</template>

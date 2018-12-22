@@ -1,0 +1,17 @@
+<import src="/components/im-chat/messageshow.vue.wxml" />
+<import src="/components/im-chat/chatinput.vue.wxml" />
+<template name="198c45c2">
+  <view class="_view data-v-b7c51612 page" style="width: 100%;">
+    <view class="_view data-v-b7c51612 uni-column">
+      <view class="_view data-v-b7c51612 content" id="content" style=" {{('height:' + (style.contentViewHeight + 'upx') + ';')}}">
+        <scroll-view id="scrollview" scroll-y="true" scroll-with-animation="{{true}}" scroll-top="{{scrollTop}}" class="_scroll-view data-v-b7c51612" style=" {{('height:' + (style.contentViewHeight + 'upx') + ';')}}">
+          <template wx:key="index" data="{{...$root['0'], ...$root[$kk+'iB9-0-'+index],$root}}" is="aa373b90" wx:for="{{messages}}" wx:for-index="index" wx:for-item="message"></template>
+          <view id="bottom" class="_view data-v-b7c51612"></view>
+        </scroll-view>
+      </view>
+      <view class="_view data-v-b7c51612 foot">
+        <template bindsend-message="handleProxy" bindfocus="handleProxy" data-eventid="{{'wof-0'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'psV-1'],$root}}" is="6df3a3b4"></template>
+      </view>
+    </view>
+  </view>
+</template>

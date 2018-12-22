@@ -1,0 +1,25 @@
+<template name="0702d018">
+  <view class="_view data-v-40baf868 page">
+    <view class="_view data-v-40baf868 uni-card">
+      <text class="_text data-v-40baf868">账号安全</text>
+    </view>
+    <view class="_view data-v-40baf868 uni-list">
+      <view class="_view data-v-40baf868 uni-list-cell" hover-class="uni-list-cell-hover" bindtap="handleProxy" data-eventid="{{'HkR-0'}}" data-comkey="{{$k}}">
+        <view class="_view data-v-40baf868 uni-list-cell-navigate uni-navigate-right" wx:if="{{userInfo.mobile_verified}}">已认证手机: {{userInfo.mobile}}</view>
+        <view class="_view data-v-40baf868 uni-list-cell-navigate uni-navigate-right" wx:if="{{!userInfo.mobile_verified}}">认证手机</view>
+      </view>
+      <view class="_view data-v-40baf868 uni-list-cell" hover-class="uni-list-cell-hover" bindtap="handleProxy" data-eventid="{{'Z1x-1'}}" data-comkey="{{$k}}">
+        <view class="_view data-v-40baf868 uni-list-cell-navigate uni-navigate-right" wx:if="{{userInfo.email_verified}}">已认证邮箱: {{userInfo.email}}</view>
+        <view class="_view data-v-40baf868 uni-list-cell-navigate uni-navigate-right" wx:if="{{!userInfo.email_verified}}">认证邮箱</view>
+      </view>
+      <view class="_view data-v-40baf868 uni-list-cell" hover-class="uni-list-cell-hover" bindtap="handleProxy" data-eventid="{{'u4y-2'}}" data-comkey="{{$k}}">
+        <view class="_view data-v-40baf868 uni-list-cell-navigate uni-navigate-right" wx:if="{{userInfo.qq_verified}}">已认证QQ: {{userInfo.qq}}</view>
+        <view class="_view data-v-40baf868 uni-list-cell-navigate uni-navigate-right" wx:if="{{!userInfo.qq_verified}}">认证QQ</view>
+      </view>
+      <view class="_view data-v-40baf868 uni-list-cell" hover-class="uni-list-cell-hover" bindtap="handleProxy" data-eventid="{{'4p3-3'}}" data-comkey="{{$k}}">
+        <view class="_view data-v-40baf868 uni-list-cell-navigate uni-navigate-right" wx:if="{{userInfo.wx_verified}}">已认证微信: {{userInfo.wx}}</view>
+        <view class="_view data-v-40baf868 uni-list-cell-navigate uni-navigate-right" wx:if="{{!userInfo.wx_verified}}">认证微信</view>
+      </view>
+    </view>
+  </view>
+</template>

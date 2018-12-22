@@ -1,0 +1,70 @@
+<template name="701967d8">
+  <view class="_view data-v-20fcffb0 index">
+    <scroll-view id="tab-bar" class="_scroll-view data-v-20fcffb0 swiper-tab" scroll-x scroll-left="{{scrollLeft}}">
+      <view wx:key="tab.id" key="{{tab.id}}" id="{{tab.id}}" data-current="{{index}}" bindtap="handleProxy" data-eventid="{{'Db0-0-'+index}}" data-comkey="{{$k}}" wx:for="{{tabBars}}" wx:for-index="index" wx:for-item="tab" class="_view data-v-20fcffb0 {{['swiper-tab-list', tabIndex == index ? 'active' : '']}}">{{tab.name}}</view>
+    </scroll-view>
+    <scroll-view id="tab-bar2" class="_scroll-view data-v-20fcffb0 swiper-tab" scroll-x scroll-left="{{scrollLeft}}">
+      <view wx:key="tab.id" key="{{tab.id}}" id="{{tab.id}}" data-current="{{index}}" bindtap="handleProxy" data-eventid="{{'I4F-1-'+index}}" data-comkey="{{$k}}" wx:for="{{myTabBars}}" wx:for-index="index" wx:for-item="tab" class="_view data-v-20fcffb0 {{['swiper-tab-list', myTabIndex == index ? 'active' : '']}}">{{tab.name}}</view>
+    </scroll-view>
+    <view class="_view data-v-20fcffb0 search-flex">
+      <view class="_view data-v-20fcffb0 search-bar">
+        <input type="text" maxlength="20" placeholder="关键字查询, 多个空格分隔" bindinput="handleProxy" data-eventid="{{'Nvm-2'}}" data-comkey="{{$k}}" class="_input data-v-20fcffb0" />
+        <button class="_button data-v-20fcffb0 search-btn" bindtap="handleProxy" wx:if="{{showsearch}}" data-eventid="{{'4ev-3'}}" data-comkey="{{$k}}">搜索</button>
+      </view>
+    </view>
+    <view class="_view data-v-20fcffb0 uni-list">
+      <view class="_view data-v-20fcffb0 uni-list-cell" hover-class="uni-list-cell-hover" wx:key="item.id" key="{{item.id}}" wx:for="{{tasklist}}" wx:for-index="index" wx:for-item="item">
+        <view class="_view data-v-20fcffb0 uni-media-list uni-list-cell-navigate">
+          <image class="_image data-v-20fcffb0 uni-media-list-logo" lazy-load src="{{item.creator.avatar}}" hover-stop-propagation="true" bindtap="handleProxy" data-eventid="{{'5ZM-4-'+index}}" data-comkey="{{$k}}"></image>
+          <view class="_view data-v-20fcffb0 uni-media-list-body" bindtap="handleProxy" data-eventid="{{'POw-5-'+index}}" data-comkey="{{$k}}">
+            <view class="_view data-v-20fcffb0 uni-media-list-text-top">
+              <text style="text-align: left;" class="_text data-v-20fcffb0">{{item.title}}</text>
+              <text style="text-align: right;" class="_text data-v-20fcffb0">{{item.created}}</text>
+            </view>
+            <view class="_view data-v-20fcffb0 uni-media-list-text-bottom">
+              <text style="text-align: left;" class="_text data-v-20fcffb0">{{item.creator.nickname}}</text>
+              <text style="text-align: right;" class="_text data-v-20fcffb0">赞{{item.thumbup_num}} 藏{{item.collect_num}} 注{{item.follow_num}} 评{{item.comment_num}} 览{{item.browser_num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="_view data-v-20fcffb0 uni-navigate-right uni-navigate-badge" bindtap="handleProxy" data-eventid="{{'8Ug-6-'+index}}" data-comkey="{{$k}}">
+          <text style="color: #CCCCCC;" class="_text data-v-20fcffb0">{{'>'}}</text>
+        </view>
+      </view>
+      <view class="_view data-v-20fcffb0 loadmore" wx:if="{{loadingText}}">
+        <text class="_text data-v-20fcffb0 loadmore-text">{{loadingText}}</text>
+      </view>
+    </view>
+    <navigator class="_navigator data-v-20fcffb0 add-wrap" hover-class="plus-hover" url="/pages/task/add">
+      <image src="/static/img/plus_new.png" class="_image data-v-20fcffb0"></image>
+    </navigator>
+    <view class="_view data-v-20fcffb0 grace-banner" wx:if="{{popupShow}}" catchtouchmove="move">
+      <view style="justify-content:flex-end;" bindtap="handleProxy" data-eventid="{{'eHp-7'}}" data-comkey="{{$k}}" class="_view data-v-20fcffb0">
+        <view style="justify-content:flex-end; text-align:right; padding:20rpx;" class="_view data-v-20fcffb0">
+          <text style="justify-content:flex-center; text-align: left; padding:130rpx;" class="_text data-v-20fcffb0">他的信息</text>
+          <text class="_text data-v-20fcffb0 uni-icon uni-icon-close"></text>
+        </view>
+      </view>
+      <view class="_view data-v-20fcffb0 uni-list">
+        <view class="_view data-v-20fcffb0 uni-list-cell" hover-class="uni-list-cell-hover">
+          <view class="_view data-v-20fcffb0 uni-media-list ">
+            <view class="_view data-v-20fcffb0 uni-media-list-logo">
+              <image src="{{popupData.avatar}}" class="_image data-v-20fcffb0"></image>
+            </view>
+            <view class="_view data-v-20fcffb0 uni-media-list-body">
+              <view class="_view data-v-20fcffb0 uni-media-list-text-top">昵称: {{popupData.nickname}}</view>
+              <view class="_view data-v-20fcffb0 uni-media-list-text-bottom uni-ellipsis">性别: {{popupData.sex_name}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view style="padding:50rpx 0; padding-bottom:68rpx;" class="_view data-v-20fcffb0">
+        <view class="_view data-v-20fcffb0 action-row">
+          <button type="primary" class="_button data-v-20fcffb0 mini-btn" bindtap="handleProxy" data-eventid="{{'Qg8-8'}}" data-comkey="{{$k}}">去关注</button>
+          <button type="primary" class="_button data-v-20fcffb0 mini-btn" bindtap="handleProxy" data-eventid="{{'y0h-9'}}" data-comkey="{{$k}}">加好友</button>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-20fcffb0 grace-mask" wx:if="{{popupShow}}" catchtouchmove="move"></view>
+  </view>
+</template>

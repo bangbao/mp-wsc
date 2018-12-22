@@ -1,0 +1,35 @@
+<template name="d0228f4e">
+  <view class="_view data-v-7b12a431 index">
+    <scroll-view id="tab-bar" class="_scroll-view data-v-7b12a431 swiper-tab" scroll-x scroll-left="{{scrollLeft}}">
+      <view wx:key="tab.id" key="{{tab.id}}" id="{{tab.id}}" data-current="{{index}}" bindtap="handleProxy" data-eventid="{{'UVe-0-'+index}}" data-comkey="{{$k}}" wx:for="{{tabBars}}" wx:for-index="index" wx:for-item="tab" class="_view data-v-7b12a431 {{['swiper-tab-list', tabIndex == index ? 'active' : '']}}">{{tab.name}}</view>
+    </scroll-view>
+    <view class="_view data-v-7b12a431 search-flex">
+      <view class="_view data-v-7b12a431 search-bar">
+        <input type="text" maxlength="20" placeholder="搜索" bindinput="handleProxy" data-eventid="{{'Dt8-1'}}" data-comkey="{{$k}}" class="_input data-v-7b12a431" />
+        <button class="_button data-v-7b12a431 search-btn" bindtap="handleProxy" wx:if="{{showsearch}}" data-eventid="{{'Ab8-2'}}" data-comkey="{{$k}}">搜索</button>
+      </view>
+    </view>
+    <view class="_view data-v-7b12a431 uni-list">
+      <view class="_view data-v-7b12a431 uni-list-cell" hover-class="uni-list-cell-hover" wx:key="item.id" key="{{item.id}}" wx:for="{{pagelist}}" wx:for-index="index" wx:for-item="item">
+        <view class="_view data-v-7b12a431 uni-media-list" wx:if="{{item.creator}}" bindtap="handleProxy" data-eventid="{{'v8u-3-'+index}}" data-comkey="{{$k}}">
+          <view class="_view data-v-7b12a431 uni-media-list-logo">
+            <image src="{{item.creator.avatar}}" class="_image data-v-7b12a431"></image>
+          </view>
+          <view class="_view data-v-7b12a431 uni-media-list-body">
+            <view class="_view data-v-7b12a431 uni-media-list-text-top">昵称: {{item.creator.nickname}}</view>
+            <view class="_view data-v-7b12a431 uni-media-list-text-bottom uni-ellipsis">{{item.content}}</view>
+          </view>
+        </view>
+        <view class="_view data-v-7b12a431 uni-media-list" wx:if="{{item.target}}" bindtap="handleProxy" data-eventid="{{'NxP-4-'+index}}" data-comkey="{{$k}}">
+          <view class="_view data-v-7b12a431 uni-media-list-logo">
+            <image src="{{item.target.avatar}}" class="_image data-v-7b12a431"></image>
+          </view>
+          <view class="_view data-v-7b12a431 uni-media-list-body">
+            <view class="_view data-v-7b12a431 uni-media-list-text-top">昵称: {{item.target.nickname}}</view>
+            <view class="_view data-v-7b12a431 uni-media-list-text-bottom uni-ellipsis">性别: {{item.target.sex_name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

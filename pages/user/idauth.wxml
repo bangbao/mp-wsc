@@ -1,0 +1,1 @@
+<import src="/pages/user/idauth.vue.wxml" /><template is="5e1fb912" data="{{ ...$root['0'], $root }}"/>

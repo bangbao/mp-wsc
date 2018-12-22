@@ -1,0 +1,32 @@
+<template name="c7af0290">
+  <view class="_view data-v-2d5ae3e0 page">
+    <view class="_view data-v-2d5ae3e0 uni-list">
+      <view class="_view data-v-2d5ae3e0 uni-list-cell" hover-class="uni-list-cell-hover">
+        <view class="_view data-v-2d5ae3e0 uni-media-list ">
+          <view class="_view data-v-2d5ae3e0 uni-media-list-logo">
+            <image src="{{contactInfo.avatar}}" class="_image data-v-2d5ae3e0"></image>
+          </view>
+          <view class="_view data-v-2d5ae3e0 uni-media-list-body">
+            <view class="_view data-v-2d5ae3e0 uni-media-list-text-top">昵称: {{contactInfo.nickname}}</view>
+            <view class="_view data-v-2d5ae3e0 uni-media-list-text-bottom uni-ellipsis">性别: {{contactInfo.sex_name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-2d5ae3e0 uni-list">
+      <view class="_view data-v-2d5ae3e0 uni-list-cell" hover-class="uni-list-cell-hover">
+        <view class="_view data-v-2d5ae3e0 uni-media-list-body">
+          <view class="_view data-v-2d5ae3e0 uni-media-list-text-top">粉丝:{{contactInfo.follower_num}}</view>
+          <view class="_view data-v-2d5ae3e0 uni-media-list-text-bottom">关注:{{contactInfo.followed_num}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-2d5ae3e0 action-row">
+      <button type="primary" class="_button data-v-2d5ae3e0 mini-btn" bindtap="handleProxy" data-eventid="{{'5BE-0'}}" data-comkey="{{$k}}">去关注</button>
+      <button type="primary" class="_button data-v-2d5ae3e0 mini-btn" bindtap="handleProxy" data-eventid="{{'bgB-1'}}" data-comkey="{{$k}}">加好友</button>
+    </view>
+    <view class="_view data-v-2d5ae3e0 btn-row">
+      <button type="primary" class="_button data-v-2d5ae3e0 btn-commit" bindtap="handleProxy" data-eventid="{{'dZH-2'}}" data-comkey="{{$k}}">发消息</button>
+    </view>
+  </view>
+</template>

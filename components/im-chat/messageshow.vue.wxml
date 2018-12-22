@@ -1,0 +1,24 @@
+<template name="aa373b90">
+  <view class="_view data-v-9e0b6c4c m-item" id="{{message.id}}" wx:if="{{!message.is_creator}}">
+    <view class="_view data-v-9e0b6c4c m-left">
+      <image class="_image data-v-9e0b6c4c head_icon" src="{{message.creator.avatar}}"></image>
+    </view>
+    <view class="_view data-v-9e0b6c4c m-content">
+      <view class="_view data-v-9e0b6c4c m-content-head {{[false ? 'm-content-head-right' : '']}}">
+        <view class="_view data-v-9e0b6c4c m-content-head-home">{{message.content}} </view>
+      </view>
+    </view>
+    <view class="_view data-v-9e0b6c4c m-right"></view>
+  </view>
+  <view class="_view data-v-9e0b6c4c m-item" id="{{message.id}}" wx:elif="{{message.is_creator}}">
+    <view class="_view data-v-9e0b6c4c m-left"></view>
+    <view class="_view data-v-9e0b6c4c m-content">
+      <view class="_view data-v-9e0b6c4c m-content-head {{[true ? 'm-content-head-right' : '']}}">
+        <view class="_view data-v-9e0b6c4c m-content-head-customer">{{message.content}} </view>
+      </view>
+    </view>
+    <view class="_view data-v-9e0b6c4c m-right">
+      <image class="_image data-v-9e0b6c4c head_icon" src="{{message.creator.avatar}}"></image>
+    </view>
+  </view>
+</template>

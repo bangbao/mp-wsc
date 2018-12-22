@@ -1,0 +1,7 @@
+<template name="5e1fb912">
+  <view class="_view data-v-5165b562 page">
+    <view class="_view data-v-5165b562 uni-card">
+      <text class="_text data-v-5165b562">实名认证</text>
+    </view>
+  </view>
+</template>

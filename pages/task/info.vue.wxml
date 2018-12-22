@@ -1,0 +1,96 @@
+<template name="2a7f93e8">
+  <view class="_view data-v-4939a880 page" style="width: 100%;">
+    <view class="_view data-v-4939a880 uni-card">
+      <view class="_view data-v-4939a880 uni-card-header">
+        <view class="_view data-v-4939a880 comment_avatar">
+          <image src="{{info.creator.avatar}}" class="_image data-v-4939a880"></image>
+        </view>
+        <view class="_view data-v-4939a880 comment_content_box">
+          <view class="_view data-v-4939a880 comment_meta">
+            <view class="_view data-v-4939a880 uni-card-media-text-top">
+              <text class="_text data-v-4939a880">{{info.creator.nickname}}</text>
+            </view>
+          </view>
+          <view class="_view data-v-4939a880 uni-card-media-text-bottom">发表于{{info.created}}</view>
+        </view>
+      </view>
+      <view class="_view data-v-4939a880 uni-card-content article-content" bindtap="handleProxy" data-eventid="{{'7RO-0'}}" data-comkey="{{$k}}">
+        <rich-text nodes="{{info.content}}" class="_rich-text data-v-4939a880"></rich-text>
+        <view class="_view data-v-4939a880 uni-card-media-text-bottom">
+          <text class="_text data-v-4939a880 uni-card-media-text-bottom">有效期:{{info.stime}} {{ ' ~ '}} {{info.etime}}</text>
+        </view>
+      </view>
+      <view class="_view data-v-4939a880 uni-card-footer" style="font-size: 36rpx;">
+        <view class="_view data-v-4939a880 uni-card-link" data-action="thumbup" bindtap="handleProxy" data-eventid="{{'aXc-1'}}" data-comkey="{{$k}}"> 点赞
+          <text class="_text data-v-4939a880 super">{{info.thumbup_num}}</text>
+        </view>
+        <view class="_view data-v-4939a880 uni-card-link" data-action="collect" bindtap="handleProxy" data-eventid="{{'hU2-2'}}" data-comkey="{{$k}}"> 收藏
+          <text class="_text data-v-4939a880 super">{{info.collect_num}}</text>
+        </view>
+        <view class="_view data-v-4939a880 uni-card-link" data-action="follow" bindtap="handleProxy" data-eventid="{{'IEr-3'}}" data-comkey="{{$k}}"> 关注
+          <text class="_text data-v-4939a880 super">{{info.follow_num}}</text>
+        </view>
+        <view class="_view data-v-4939a880 uni-card-link" data-action="comment"> 评论
+          <text class="_text data-v-4939a880 super">{{info.comment_num}}</text>
+        </view>
+        <view class="_view data-v-4939a880 uni-card-link" data-action="browser"> 浏览
+          <text class="_text data-v-4939a880 super">{{info.browser_num}}</text>
+        </view>
+        <view class="_view data-v-4939a880 uni-card-link" data-action="sharing"> 分享
+          <text class="_text data-v-4939a880 super">{{info.sharing_num}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-4939a880 title_box">
+      <text class="_text data-v-4939a880">评论列表</text>
+    </view>
+    <view class="_view data-v-4939a880 comment_list_box">
+      <scroll-view class="_scroll-view data-v-4939a880 comment_list_box" scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltoupper="handleProxy" bindscrolltolower="handleProxy" data-eventid="{{'PHz-6'}}" data-comkey="{{$k}}">
+        <view class="_view data-v-4939a880 comment_list" wx:key="item.id" key="{{item.id}}" wx:for="{{messages}}" wx:for-index="index" wx:for-item="item">
+          <button class="_button data-v-4939a880 avatar_button" bindgetuserinfo="avatarClicked" open-type="getUserInfo" lang="zh_CN">
+            <view class="_view data-v-4939a880 comment_avatar">
+              <image src="{{item.creator.avatar}}" class="_image data-v-4939a880"></image>
+            </view>
+          </button>
+          <view class="_view data-v-4939a880 comment_total_box">
+            <view class="_view data-v-4939a880 comment_content_box">
+              <view class="_view data-v-4939a880 comment_meta">
+                <view class="_view data-v-4939a880 comment_nickname">
+                  <text class="_text data-v-4939a880">{{item.creator.nickname}}</text>
+                  <view class="_view data-v-4939a880 commnet_date">
+                    <text class="_text data-v-4939a880">{{item.created}}</text>
+                  </view>
+                </view>
+                <view class="_view data-v-4939a880 comment_zan" bindtap="handleProxy" data-eventid="{{'RGP-4-'+index}}" data-comkey="{{$k}}">
+                  <image src="/static/images/zan_self.png" wx:if="{{item.creator.id == userInfo.id}}" class="_image data-v-4939a880"></image>
+                  <image src="/static/images/zan.png" wx:else class="_image data-v-4939a880"></image>
+                  <text class="_text data-v-4939a880 comment_zan_num" wx:if="{{item.thumbup_num > 0}}">{{item.thumbup_num}}</text>
+                </view>
+              </view>
+              <view class="_view data-v-4939a880 comment_content" bindtap="handleProxy" bindlongpress="handleProxy" data-eventid="{{'92O-5-'+index}}" data-comkey="{{$k}}">{{item.comment}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="_view data-v-4939a880 add_btn">
+      <button class="_button data-v-4939a880 btn" bindtap="handleProxy" data-eventid="{{'WWf-7'}}" data-comkey="{{$k}}"> 去评论 </button>
+      <button class="_button data-v-4939a880 btn" bindtap="handleProxy" data-eventid="{{'Dbc-8'}}" data-comkey="{{$k}}"> 去群聊 </button>
+    </view>
+    <view class="_view data-v-4939a880 grace-banner" style="background:#FFFFFF;" wx:if="{{commentPopupShow}}" catchtouchmove="move">
+      <view style="justify-content:flex-end;" bindtap="handleProxy" data-eventid="{{'Z4f-9'}}" data-comkey="{{$k}}" class="_view data-v-4939a880">
+        <view style="justify-content:flex-end; text-align:right; padding:20rpx;" class="_view data-v-4939a880">
+          <text style="padding:120rpx; " class="_text data-v-4939a880">发表评论</text>
+          <text class="_text data-v-4939a880 uni-icon uni-icon-close"></text>
+        </view>
+      </view>
+      <view class="_view data-v-4939a880">
+        <textarea style="margin:0 20rpx;" data-name="comment" placeholder="评论内容, 2~100字" maxlength="100" bindinput="handleProxy" data-eventid="{{'KqL-10'}}" data-comkey="{{$k}}" class="_textarea data-v-4939a880" />
+      </view>
+      <view style="padding:50rpx 0; padding-bottom:68rpx;" class="_view data-v-4939a880">
+        <button type="warn" class="_button data-v-4939a880 mini-btn" style="background:#006600; margin:0 80rpx;" bindtap="handleProxy" data-eventid="{{'pL8-11'}}" data-comkey="{{$k}}">提交评论</button>
+      </view>
+    </view>
+    <view class="_view data-v-4939a880 grace-mask" wx:if="{{commentPopupShow}}" catchtouchmove="move"></view>
+  </view>
+</template>

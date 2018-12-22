@@ -1,0 +1,10 @@
+<template name="59055112">
+  <view class="_view data-v-3f0cba9f about">
+    <view class="_view data-v-3f0cba9f content">
+      <view class="_view data-v-3f0cba9f version"> 当前版本：
+        <text class="_text data-v-3f0cba9f code"> {{version}} </text>
+      </view>
+      <button type="primary" bindtap="handleProxy" data-eventid="{{'Ow2-0'}}" data-comkey="{{$k}}" class="_button data-v-3f0cba9f">检查更新</button>
+    </view>
+  </view>
+</template>

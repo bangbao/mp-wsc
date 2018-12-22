@@ -1,0 +1,24 @@
+<template name="fc3af084">
+  <view class="_view data-v-32c61f96 container container-gray">
+    <view class="_view data-v-32c61f96 group">
+      <view class="_view data-v-32c61f96 group-header">基本信息</view>
+      <view class="_view data-v-32c61f96 group-body">
+        <view class="_view data-v-32c61f96 input-list">
+          <view class="_view data-v-32c61f96 input-item">
+            <text class="_text data-v-32c61f96 input-item-label">昵称:</text>
+            <view class="_view data-v-32c61f96 input-item-content">
+              <input data-name="nickname" placeholder="请输入昵称, 1~20字" maxlength="20" bindinput="handleProxy" value="{{nickname}}" data-eventid="{{'byS-0'}}" data-comkey="{{$k}}" class="_input data-v-32c61f96" />
+            </view>
+          </view>
+          <view class="_view data-v-32c61f96 input-item">
+            <text class="_text data-v-32c61f96 input-item-label">性别:</text>
+            <picker data-name="sex" class="_picker data-v-32c61f96 input-item-content" bindchange="handleProxy" range="{{sexChoices}}" value="{{sex}}" mode="selector" data-eventid="{{'fFJ-1'}}" data-comkey="{{$k}}">{{sexName}}</picker>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-32c61f96 btn-submit">
+      <button class="_button data-v-32c61f96 btn-commit" bindtap="handleProxy" data-eventid="{{'1Oo-2'}}" data-comkey="{{$k}}">提交</button>
+    </view>
+  </view>
+</template>

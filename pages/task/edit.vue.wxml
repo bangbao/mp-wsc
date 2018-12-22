@@ -1,0 +1,29 @@
+<template name="7f618f44">
+  <view class="_view data-v-3045271c container container-gray">
+    <view class="_view data-v-3045271c group">
+      <view class="_view data-v-3045271c group-header">基本信息</view>
+      <view class="_view data-v-3045271c group-body">
+        <view class="_view data-v-3045271c input-list">
+          <view class="_view data-v-3045271c input-item">
+            <text class="_text data-v-3045271c input-item-label">标题:</text>
+            <view class="_view data-v-3045271c input-item-content">
+              <input data-name="title" placeholder="请输入标题, 2~20字" maxlength="20" bindinput="handleProxy" value="{{taskInfo.title}}" data-eventid="{{'65o-0'}}" data-comkey="{{$k}}" class="_input data-v-3045271c" />
+            </view>
+          </view>
+          <view class="_view data-v-3045271c input-item input-item-full">
+            <text class="_text data-v-3045271c input-item-label">内容:</text>
+            <textarea data-name="content" placeholder="请输入内容, 2~100字" maxlength="100" bindinput="handleProxy" value="{{taskInfo.content}}" data-eventid="{{'vqw-1'}}" data-comkey="{{$k}}" class="_textarea data-v-3045271c" />
+          </view>
+          <view class="_view data-v-3045271c input-item">
+            <text class="_text data-v-3045271c input-item-label">有效期:</text>
+            <picker class="_picker data-v-3045271c input-item-content" bindchange="handleProxy" data-name="stime" value="{{stime}}" mode="date" data-eventid="{{'4cb-2'}}" data-comkey="{{$k}}">{{taskInfo.stime}}</picker>
+            <picker class="_picker data-v-3045271c input-item-content" bindchange="handleProxy" data-name="etime" value="{{etime}}" mode="date" data-eventid="{{'GQI-3'}}" data-comkey="{{$k}}">{{taskInfo.etime}}</picker>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-3045271c btn-submit">
+      <button class="_button data-v-3045271c btn-block btn-green" bindtap="handleProxy" data-eventid="{{'R9K-4'}}" data-comkey="{{$k}}">提交</button>
+    </view>
+  </view>
+</template>
